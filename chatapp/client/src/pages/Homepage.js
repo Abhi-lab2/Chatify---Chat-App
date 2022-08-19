@@ -1,5 +1,3 @@
-import React from "react";
-import { useEffect } from "react";
 import {
   Box,
   Container,
@@ -10,12 +8,22 @@ import {
   Tabs,
   Text,
 } from "@chakra-ui/react";
-import { Login } from "../components/Authentication/Login";
-import { Signup } from "../components/Authentication/Signup";
+import { useEffect } from "react";
+import { useNavigate } from "react-router";
+import {Login} from "../components/Authentication/Login";
+import {Signup} from "../components/Authentication/Signup";
 
-export const HomePage = () => {
+function Homepage() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("userInfo"));
+
+    if (user) navigate("/chats");
+  }, [navigate]);
+
   return (
-    <Container maxW="xl" centerContent w={'510px'}>
+    <Container maxW="xl" centerContent>
       <Box
         d="flex"
         justifyContent="center"
@@ -27,7 +35,7 @@ export const HomePage = () => {
         borderWidth="1px"
       >
         <Text fontSize="4xl" fontFamily="Work sans">
-          Chat App
+          Chatify App
         </Text>
       </Box>
       <Box bg="white" w="100%" p={4} borderRadius="lg" borderWidth="1px">
@@ -37,11 +45,17 @@ export const HomePage = () => {
             <Tab>Sign Up</Tab>
           </TabList>
           <TabPanels>
-            <TabPanel><Login /></TabPanel>
-            <TabPanel><Signup /></TabPanel>
+            <TabPanel>
+              <Login />
+            </TabPanel>
+            <TabPanel>
+              <Signup />
+            </TabPanel>
           </TabPanels>
         </Tabs>
       </Box>
     </Container>
   );
-};
+}
+
+export default Homepage;

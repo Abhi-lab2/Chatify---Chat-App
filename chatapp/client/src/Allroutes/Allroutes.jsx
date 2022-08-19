@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { ChatPage } from "../pages/Chatpage";
-import { HomePage } from "../pages/Homepage";
+import ChatPage from "../pages/Chatpage";
+import HomePage from "../pages/Homepage";
 
 export const Allroutes = () => {
   return (
