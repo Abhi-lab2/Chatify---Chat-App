@@ -1,9 +1,21 @@
 * {
-    /* padding-left: 10px; */
-    /* max-width: 1224px; */
-    margin: auto;
+  /* padding-left: 10px; */
+  /* max-width: 1224px; */
+  /* margin: auto; */
 }
 
 .table-body {
-    padding-bottom: 100px;
+  padding-bottom: 100px;
+}
+.tablelist {
+  justify-content: center;
+  text-align: center;
+}
+.red-btn {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 12px;
+}
+.add  {
+  text-align: left;
 }

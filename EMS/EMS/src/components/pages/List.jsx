@@ -16,16 +16,17 @@ import "./list.css";
 const List = ({ emp, handleEdit, handleDelete }) => {
   return (
     <TableContainer>
-      <Table variant="striped" colorScheme="grey">
+      <Table variant="striped" colorScheme="grey" className="tablelist">
         <TableCaption>Employees Complete Data</TableCaption>
         <Thead>
           <Tr>
             <Th>No</Th>
             <Th>First Name</Th>
-            <Th>Last Name</Th>
-            <Th>Email</Th>
-            <Th>salary</Th>
-            <Th>Date</Th>
+            <Th>Age</Th>
+            <Th>Department</Th>
+            <Th>bloodgroup</Th>
+            <Th>Address</Th>
+            <Th>Contact </Th>
             <Th>Actions</Th>
           </Tr>
         </Thead>
@@ -34,11 +35,12 @@ const List = ({ emp, handleEdit, handleDelete }) => {
             emp.map((employee, i) => (
               <tr key={employee.id}>
                 <td style={{ paddingLeft: "30px" }}>{i + 1}</td>
-                <td>{employee.firstName}</td>
-                <td>{employee.lastName}</td>
-                <td>{employee.email}</td>
-                <td>{employee.salary}</td>
-                <td>{employee.date} </td>
+                <td>{employee.name}</td>
+                <td>{employee.age}</td>
+                <td>{employee.department}</td>
+                <td>{employee.bloodgroup} </td>
+                <td className="add">{employee.address} </td>
+                <td>{employee.contact} </td>
                 <td className="text-right">
                   <Button
                     colorScheme="blue"
@@ -48,10 +50,9 @@ const List = ({ emp, handleEdit, handleDelete }) => {
                     Edit
                   </Button>
                   <Button
-                    style={{ marginLeft: "12px" }}
                     colorScheme="red"
                     onClick={() => handleDelete(employee.id)}
-                    className="button muted-button"
+                    className="button muted-button red-btn"
                   >
                     Delete
                   </Button>
