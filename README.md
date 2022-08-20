@@ -4,6 +4,7 @@ Chat Application using MERN
 
 ## For ChatApp to run 
 -- For backend use -> npm run server 
+
 -- For frontend use -> npm run start 
 
 
